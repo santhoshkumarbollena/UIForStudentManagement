@@ -1,0 +1,11 @@
+.AllButton {
+	height: 40px;
+	width: 100px;
+	background: darkslategray;
+	color: #ffffff;
+	font-weight: bold;
+}
+.AllButton:HOVER {
+	background: #040a0b;
+	border: 1px solid #1f1f1f;
+}
