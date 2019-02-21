@@ -1,0 +1,19 @@
+<form [formGroup]="StudentSer.form" class="Form-Design">
+    <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="Form-Controls">
+        
+        <mat-form-field>
+          <input formControlName="$key" matInput placeholder="Student Id*">
+          <mat-error>Student Name Is Mandatory</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" (click)="DeleteStudbyId($key)" [disabled]="StudentSer.form.invalid">Submit</button>
+        </div>
+    </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+

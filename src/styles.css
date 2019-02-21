@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+form.Form-Design{
+    margin:10px;
+}
+.Form-Controls{
+    width :100%;
+    padding:5%;
+}
+.Form-Controls > *{
+    width :100%;
+}
+.button-row button{
+    margin:10px;
+}
+snack-bar-container.success{
+    background-color: #4f15bd;
+    color:white;
+}
+snack-bar-container.notification simple-snack-bar{
+    font-size: 20px !important;
+    font-weight: bold;
+}

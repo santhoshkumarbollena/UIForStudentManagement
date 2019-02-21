@@ -14,6 +14,11 @@ export class TestComponent implements OnInit {
   public Allstudents$:Student[];
   public stud$:Student;
   public sid=1;
+  countries =[
+    {id :1,value:'India'},
+    {id:2,value:'United States'},
+    {id :3,value:'Canada'}
+  ];
   constructor(private StudentSer:StudentServicesService) { }
   // public colors=["red","blue","yello"];
   // @Input('parentData') public ParentName;

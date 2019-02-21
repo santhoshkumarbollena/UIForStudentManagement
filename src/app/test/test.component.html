@@ -1,4 +1,4 @@
-<input [(ngModel)]="sid" type="number">
+<!-- <input [(ngModel)]="sid" type="number">
 <button class="AllButton" (click)="GetStudbyId(sid)" > Get Student by id</button>
 <button class="AllButton" (click)="DeleteStudbyId(sid)" > Delete Student by id</button>
 <table border="1">
@@ -61,5 +61,39 @@
   
   </tr>
 
-</table>
+</table> -->
+<!-- 
+<form [formGroup]="StudentSer.form" class="Form-Design">
+  <mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-tile>
+    <div class="Form-Controls">
+      <input type="hidden" formControlName="$key">
+      <mat-form-field>
+        <input [(ngModel)]="this.studd.name" formControlName="StudentName" matInput placeholder="Student Name*">
+        <mat-error>Student Name Is Mandatory</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <input [(ngModel)]="this.studd.age" formControlName="StudentAge" matInput placeholder="Student Age">
+        </mat-form-field>
+        <mat-form-field>
+           <mat-select [(ngModel)]="this.studd.country" formControlName="StudentCountry" placeholder="Student Country">
+              <mat-option>none</mat-option>
+              <ng-container *ngFor="let country of countries">
+                <mat-option value="{{country.id}}">{{country.value}}</mat-option>
+              </ng-container>
+           </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+              <input [(ngModel)]="this.studd.email" formControlName="StudentEmail" matInput placeholder="Student Email">
+              <mat-error>Invalid Email Address</mat-error>
+            </mat-form-field>
 
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" (click)="AddStudent(this.studd)" [disabled]="StudentSer.form.invalid">Submit</button>
+      </div>
+  </mat-grid-tile>
+  </mat-grid-list>
+</form> -->
