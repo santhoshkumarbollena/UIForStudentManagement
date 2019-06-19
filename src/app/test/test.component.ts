@@ -14,7 +14,7 @@ export class TestComponent implements OnInit {
   public Allstudents$:Student[];
   public stud$:Student;
   public sid=1;
-  countries =[
+  Countries =[
     {id :1,value:'India'},
     {id:2,value:'United States'},
     {id :3,value:'Canada'}
@@ -29,6 +29,8 @@ export class TestComponent implements OnInit {
     return this.StudentSer.getStudents().subscribe(StudentSer => this.Allstudents$=StudentSer);
   }
   GetStudbyId(sid){
+    //console.log(this.StudentSer.getStudentById(this.sid).subscribe(StudentSer => this.stud$=StudentSer));
+    //console.log(this.stud$);
     return this.StudentSer.getStudentById(this.sid).subscribe(StudentSer => this.stud$=StudentSer);
   }
   DeleteStudbyId(sid){
@@ -36,11 +38,11 @@ export class TestComponent implements OnInit {
     return this.StudentSer.deleteStudentById(this.sid).subscribe();
   }
   AddStudent(studd){
-    //console.log(this.studd.name);
+    console.log(this.studd);
     return this.StudentSer.addStudent(this.studd).subscribe();
   }
   UpdateStudent(studd){
-    //console.log(this.studd.name);
+    console.log(this.studd);
     return this.StudentSer.updateStudent(this.studd).subscribe();
   }
   ngOnInit() {

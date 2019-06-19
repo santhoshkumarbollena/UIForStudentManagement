@@ -8,53 +8,56 @@ import {FormGroup ,FormControl, Validators } from "@angular/forms"
   providedIn: 'root'
 })
 export class StudentServicesService {
-  Url="http://localhost:8884/getAllStudents";
+  Url="http://localhost:10000/GetAllStudents";
   
   constructor(private http:HttpClient) { }
   public  studd1=new Student;
   form : FormGroup =new FormGroup({
-    $key:new FormControl(null),
-    StudentName:new FormControl('',Validators.required),
-    StudentAge:new FormControl(''),
-    StudentCountry:new FormControl(0),
-    StudentEmail:new FormControl('',Validators.email)
+    Id:new FormControl(0),
+    Name:new FormControl(''),
+    Age:new FormControl(''),
+    Country:new FormControl(''),
+    Email:new FormControl('',)
   });
   initializeFormGroup(){
     this.form.setValue({
-      $key:null,
-      StudentName:'',
-      StudentAge:'',
-      StudentCountry:0,
-      StudentEmail:''
+      Id:0,
+      Name:'',
+      Age:'',
+      Country:'',
+      Email:''
     });
   }
   getStudents(){
     return this.http.get<Student[]>(this.Url); 
   }
   getStudentById(sid){
-    return this.http.get<Student>("http://localhost:8884/getStudentById/"+sid);
+  //console.log(this.http.get<Student>("http://localhost:10000/GetStudentById/"+sid).subscribe);
+    return this.http.get<Student>("http://localhost:10000/GetStudentById/"+sid);
   }
   deleteStudentById(sid){
-    sid=this.form.get("$key").value;
+    
     console.log(sid);
-    return this.http.delete("http://localhost:8884/deletingStudent/"+sid);
+    return this.http.delete("http://localhost:10000/DeleteStudent/"+sid);
   }
    httpOptions={
     headers :new HttpHeaders({'Content-Type':'application/json'})
   };
   
   addStudent(studd1){
-    studd1.name=this.form.get("StudentName").value;
-    studd1.age=this.form.get("StudentAge").value;
-    studd1.country=this.form.get("StudentCountry").value;
-    studd1.email=this.form.get("StudentEmail").value;
-    console.log(studd1.country);
-    console.log(studd1.name);
-    return this.http.post<any>('http://localhost:8884/AddStudent',JSON.stringify(studd1),this.httpOptions);
+    // studd1.Id=this.form.get("StudentId").value;
+    // studd1.Name=this.form.get("StudentName").value;
+    // studd1.Age=this.form.get("StudentAge").value;
+    // studd1.Country=this.form.get("StudentCountry").value;
+    // studd1.Email=this.form.get("StudentEmail").value;
+    //console.log("2nd");
+
+    console.log(studd1);
+    return this.http.post<any>('http://localhost:10000/AddStudent',JSON.stringify(studd1));
   }
   updateStudent(studd){
-    console.log(studd.id);
-    console.log(studd.name);
-    return this.http.put<any>('http://localhost:8884/UpdateStudent/'+studd.id,JSON.stringify(studd),this.httpOptions);
+    // console.log(studd.id);
+    // console.log(studd.name);
+    return this.http.put<any>('http://localhost:10000/UpdateStudent',JSON.stringify(studd));
   }
 }

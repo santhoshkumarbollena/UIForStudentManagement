@@ -1,8 +1,8 @@
 export class Student{
-    id: number;
-    name:string;
-    age:number;
-    country:string;
-    email:string;
+    Id: number;
+    Name:string;
+    Age:string;
+    Country: string;
+    Email:string;
     
 }

@@ -1,4 +1,4 @@
-<!-- <input [(ngModel)]="sid" type="number">
+<input [(ngModel)]="sid" type="number">
 <button class="AllButton" (click)="GetStudbyId(sid)" > Get Student by id</button>
 <button class="AllButton" (click)="DeleteStudbyId(sid)" > Delete Student by id</button>
 <table border="1">
@@ -9,34 +9,35 @@
       <th>Student Country</th>
       <th>Student Email</th>
     </tr>
-    <tr >
-      <td> {{stud$?.id}}</td>
-      <td> {{stud$?.name}}</td>
-      <td> {{stud$?.age}}</td>
-      <td> {{stud$?.country}}</td>
-      <td>{{stud$?.email}}</td>
-      </tr>
+    <tr *ngFor="let student of stud$">
+      <td> {{student.Id}}</td>
+      <td> {{student.Name}}</td>
+      <td> {{student.Age}}</td>
+      <td> {{student.Country}}</td>
+      <td>{{student.Email}}</td>
+    
+    </tr>
     </table>
     <table>
     <tr>
     <td>Student id :</td>
-   <td> <input [(ngModel)]="this.studd.id" type="number"></td>
+   <td> <input [(ngModel)]="this.studd.Id" type="number"></td>
     </tr>
     <tr>
     <td>Student Name:</td>
-    <td><input [(ngModel)]="this.studd.name" type="text"></td>
+    <td><input [(ngModel)]="this.studd.Name" type="text"></td>
   </tr>
   <tr>
     <td>Student Age:</td>
-    <td><input [(ngModel)]="this.studd.age" type="number"></td>
+    <td><input [(ngModel)]="this.studd.Age" type="text"></td>
   </tr>
    <tr>
     <td>Student Country:</td>
-    <td><input [(ngModel)]="this.studd.country" type="text"></td>
+    <td><input [(ngModel)]="this.studd.Country" type="text"></td>
   </tr>
   <tr>
     <td>Student Email:</td>
-    <td><input [(ngModel)]="this.studd.email" type="text"></td>
+    <td><input [(ngModel)]="this.studd.Email" type="text"></td>
   </tr>
     <td><button class="AllButton" (click)="AddStudent(this.studd)" > Add Student </button></td>
     <td><button class="AllButton" (click)="UpdateStudent(this.studd)" > Update Student </button></td>
@@ -53,15 +54,15 @@
     <th>Student Email</th>
   </tr>
   <tr *ngFor="let student of Allstudents$">
-    <td> {{student.id}}</td>
-    <td> {{student.name}}</td>
-    <td> {{student.age}}</td>
-    <td> {{student.country}}</td>
-    <td>{{student.email}}</td>
+    <td> {{student.Id}}</td>
+    <td> {{student.Name}}</td>
+    <td> {{student.Age}}</td>
+    <td> {{student.Country}}</td>
+    <td>{{student.Email}}</td>
   
   </tr>
 
-</table> -->
+</table> 
 <!-- 
 <form [formGroup]="StudentSer.form" class="Form-Design">
   <mat-grid-list cols="2" rowHeight="300px">
